@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     description = models.TextField(default='')
     #favorite_tusas = models.ManyToManyField(Tusa)
-    avatar = models.ImageField(default='def.jpg')
+    avatar = models.ImageField(blank=False, null=False)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):

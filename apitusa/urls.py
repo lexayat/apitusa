@@ -6,6 +6,8 @@ from userProfile.views import UserListDetail
 from userProfile.views import UserViewSet
 from userProfile.views import ProfileViewSet
 from userProfile.views import TusasViewSet
+from django.conf import settings
+from django.conf.urls.static import static
 
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
@@ -26,3 +28,6 @@ urlpatterns = [
     #path('users/', UserViewSet.as_view()),
     #path('profiles/', ProfileViewSet.as_view()),
 ]
+
+if settings.DEBUG:
+  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

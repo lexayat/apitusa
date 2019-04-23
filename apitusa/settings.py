@@ -163,3 +163,6 @@ ACCOUNT_LOGOUT_ON_GET = True
 DATA_UPLOAD_MAX_NUMBER_FIELDS = None
 
 USE_TZ=False
+
+MEDIA_URL =  '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
